@@ -1,0 +1,26 @@
+dscvd3d
+=======
+DirectShowから入力した動画をOpenCVで処理してD3Dのテクスチャ表示するサンプル
+
+build
+-----
+    > premake4 vs2010
+
+usage
+-----
+USBカメラをチェスボードに向けてspaceキーを押す
+
+dependency
+----------
+ * VC2010 express edition
+ * WinDDK(7600.16385.1) atl
+ * DirectX(June2010)
+ * Platform SDK(Windows SDK for Windows Server 2008 ?)(qedit.h)
+ * OpenCV-2.4
+ * WTL(8.0) 
+
+todo
+----
+ * テクスチャ表示にshaderを適用する
+ * wtlを取り除く 
+
