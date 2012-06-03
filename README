@@ -13,11 +13,12 @@ USBカメラをチェスボードに向けてspaceキーを押す
 dependency
 ----------
  * VC2010 express edition
- * WinDDK(7600.16385.1) atl
- * DirectX(June2010)
- * Platform SDK(Windows SDK for Windows Server 2008 ?)(qedit.h)
+
+ * WinDDK-7600.16385.1(atl's CComPtr)
+ * DirectX-June2010(9C)
+ * Platform SDK[Windows SDK for Windows Server 2008 ?](qedit.h)
  * OpenCV-2.4
- * WTL(8.0) 
+ * WTL-8.0 
 
 todo
 ----
