@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "OpenCV.h"
 #include "Image.h"
 #include "HUD.h"

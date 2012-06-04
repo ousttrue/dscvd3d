@@ -1,5 +1,6 @@
 #pragma once
 #include <sstream>
+#include <windows.h>
 
 
 class HUD

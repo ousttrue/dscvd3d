@@ -1,8 +1,10 @@
 #pragma once
+#include <atlbase.h>
 #include <vector>
 #include <list>
 #include <memory>
 #include <deque>
+#include <d3d9.h>
 
 class CaptureGrabber;
 class Texture;

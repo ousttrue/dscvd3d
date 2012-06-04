@@ -1,8 +1,8 @@
-#include "stdafx.h"
 #include "HUD.h"
 #include "Image.h"
 #include <vector>
 #include <memory>
+#include <tchar.h>
 
 
 class TextGrid

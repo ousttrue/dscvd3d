@@ -61,7 +61,6 @@ defines {
 }
 includedirs {
     "C:/WinDDK/7600.16385.1/inc/atl71",
-    "C:/WTL80/include",
     "$(DXSDK_DIR)/include",
     "C:/Program Files/Microsoft SDKs/Windows/v6.1/Include",
     "C:/opencv/include",

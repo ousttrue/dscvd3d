@@ -1,5 +1,5 @@
-#include "stdafx.h"
 #include "Texture.h"
+#include <assert.h>
 
 
 struct Vertex

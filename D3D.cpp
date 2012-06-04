@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "D3D.h"
 #include "Texture.h"
 #include "CaptureGrabber.h"

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "CaptureGrabber.h"
 #include "HUD.h"
 
