@@ -32,7 +32,8 @@ HRESULT CaptureGrabber::Initialize()
     }
 
     // input
-    m_srcFilter=CreateSrcFilter(L"Microsoft LifeCam Cinema");
+    //m_srcFilter=CreateSrcFilter(L"Microsoft LifeCam Cinema");
+	m_srcFilter=CreateSrcFilter(L"PS3Eye Camera");
     if(!m_srcFilter){
         return E_FAIL;
     }
@@ -194,6 +195,9 @@ CComPtr<IBaseFilter> CaptureGrabber::CreateSrcFilter(const std::wstring &friendl
 
 HRESULT CaptureGrabber::Update()
 {
+	if(m_buffer.empty()){
+		return E_FAIL;
+	}
     // Œ»Ý•\Ž¦‚³‚ê‚Ä‚¢‚é‰f‘œ‚ðÃŽ~‰æ‚Æ‚µ‚ÄŽæ“¾
     long nBufferSize=m_buffer.size();
     HRESULT hr=m_sampleGrabber->GetCurrentBuffer(&nBufferSize, (long*)&m_buffer[0]);

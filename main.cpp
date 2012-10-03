@@ -12,6 +12,7 @@ class Window
 {
     HWND hwnd_;
     std::function<void(int, int)> onResize_;
+	std::function<bool(int)> onKeydown_;
 public:
     Window()
         : hwnd_(0)
@@ -33,6 +34,11 @@ public:
         UpdateWindow(hwnd_);
     }
     
+	void SetOnKeydown(std::function<bool(int)> callback)
+	{
+		onKeydown_=callback;
+	}
+
     void SetOnResize(std::function<void(int,int)> callback)
     {
         onResize_=callback;
@@ -59,6 +65,14 @@ public:
                     return 0;
                 }
                 break;
+
+			case WM_KEYDOWN:
+				if(onKeydown_){
+					if(onKeydown_(wParam)){
+						return 0;
+					}
+				}
+				break;  // “Á‚Éˆ—‚µ‚È‚¢ƒL[‚ÍDefWindowProc()‚É”C‚¹‚é
         }
         return DefWindowProc(hwnd, message, wParam, lParam);
     }
@@ -167,6 +181,14 @@ int WINAPI WinMain(
     window->SetOnResize([d3d](int w, int h){
             d3d->Resize(w, h);
             });
+	window->SetOnKeydown([d3d](int key)->bool{
+		if(key == VK_SPACE)
+		{
+			d3d->Capture();
+			return true;
+		}
+		return false;
+	});
 
     MSG msg;
     bool isLoop=true;

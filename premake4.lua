@@ -37,6 +37,8 @@ end
 
 configuration {}
 
+local OPENCV_DIR="C:/opencv24"
+
 ------------------------------------------------------------------------------
 -- Project
 ------------------------------------------------------------------------------
@@ -63,23 +65,23 @@ includedirs {
     "C:/WinDDK/7600.16385.1/inc/atl71",
     "$(DXSDK_DIR)/include",
     "C:/Program Files/Microsoft SDKs/Windows/v6.1/Include",
-    "C:/opencv/include",
-    "C:/opencv/modules/core/include",
-    "C:/opencv/modules/flann/include",
-    "C:/opencv/modules/imgproc/include",
-    "C:/opencv/modules/photo/include",
-    "C:/opencv/modules/video/include",
-    "C:/opencv/modules/features2d/include",
-    "C:/opencv/modules/objdetect/include",
-    "C:/opencv/modules/calib3d/include",
-    "C:/opencv/modules/ml/include",
-    "C:/opencv/modules/highgui/include",
-    "C:/opencv/modules/contrib/include",
+    OPENCV_DIR.."/include",
+    OPENCV_DIR.."/modules/core/include",
+    OPENCV_DIR.."/modules/flann/include",
+    OPENCV_DIR.."/modules/imgproc/include",
+    OPENCV_DIR.."/modules/photo/include",
+    OPENCV_DIR.."/modules/video/include",
+    OPENCV_DIR.."/modules/features2d/include",
+    OPENCV_DIR.."/modules/objdetect/include",
+    OPENCV_DIR.."/modules/calib3d/include",
+    OPENCV_DIR.."/modules/ml/include",
+    OPENCV_DIR.."/modules/highgui/include",
+    OPENCV_DIR.."/modules/contrib/include",
 }
 libdirs {
     "C:/WinDDK/7600.16385.1/lib/ATL/i386",
     "$(DXSDK_DIR)/lib/x86",
-    "C:/opencv/build/x86/vc10/staticlib",
+    OPENCV_DIR.."/build/x86/vc10/staticlib",
 }
 links {
     "atlthunk",
