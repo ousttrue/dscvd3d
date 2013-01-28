@@ -57,5 +57,14 @@ void OpenCV::Push(std::shared_ptr<Image> image)
     m_translationVectors.clear();
     cv::calibrateCamera(m_worldPoints, m_imagePoints, m_checkerImgs[0].size(),
             m_cameraMatrix, m_distCoeffs, m_rotationVectors, m_translationVectors);
+
+	// (7)XMLファイルへの書き出し
+	CvFileStorage *fs;
+	fs = cvOpenFileStorage ("camera.xml", 0, CV_STORAGE_WRITE);
+	cvWrite (fs, "intrinsic", intrinsic);
+	cvWrite (fs, "rotation", rotation);
+	cvWrite (fs, "translation", translation);
+	cvWrite (fs, "distortion", distortion);
+	cvReleaseFileStorage (&fs);
 }
 
