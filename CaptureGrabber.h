@@ -1,7 +1,7 @@
 #pragma once
 #include <atlbase.h>
 #include <dshow.h>
-#include <qedit.h>
+#include "qedit.h"
 #pragma comment(lib, "strmiids")
 #include <vector>
 

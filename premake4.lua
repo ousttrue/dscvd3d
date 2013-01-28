@@ -1,5 +1,9 @@
--- A solution contains projects, and defines the available configurations
-solution "SampleGrabber"
+OPENCV_DIR="C:/opencv243"
+
+------------------------------------------------------------------------------
+-- Solution
+------------------------------------------------------------------------------
+solution "dscvd3d"
 configurations { "Release", "Debug" }
 configuration "gmake Debug"
 do
@@ -37,12 +41,10 @@ end
 
 configuration {}
 
-local OPENCV_DIR="C:/opencv24"
-
 ------------------------------------------------------------------------------
 -- Project
 ------------------------------------------------------------------------------
-project "SampleGrabber"
+project "dscvd3d"
 --language "C"
 language "C++"
 --kind "StaticLib"
@@ -64,19 +66,7 @@ defines {
 includedirs {
     "C:/WinDDK/7600.16385.1/inc/atl71",
     "$(DXSDK_DIR)/include",
-    "C:/Program Files/Microsoft SDKs/Windows/v6.1/Include",
-    OPENCV_DIR.."/include",
-    OPENCV_DIR.."/modules/core/include",
-    OPENCV_DIR.."/modules/flann/include",
-    OPENCV_DIR.."/modules/imgproc/include",
-    OPENCV_DIR.."/modules/photo/include",
-    OPENCV_DIR.."/modules/video/include",
-    OPENCV_DIR.."/modules/features2d/include",
-    OPENCV_DIR.."/modules/objdetect/include",
-    OPENCV_DIR.."/modules/calib3d/include",
-    OPENCV_DIR.."/modules/ml/include",
-    OPENCV_DIR.."/modules/highgui/include",
-    OPENCV_DIR.."/modules/contrib/include",
+    OPENCV_DIR.."/build/include",
 }
 libdirs {
     "C:/WinDDK/7600.16385.1/lib/ATL/i386",
@@ -95,17 +85,17 @@ do
     targetdir "debug"
     links {
         "zlibd",
-        "opencv_core240d",
-        "opencv_flann240d",
-        "opencv_imgproc240d",
-        "opencv_photo240d",
-        "opencv_video240d",
-        "opencv_features2d240d",
-        "opencv_objdetect240d",
-        "opencv_calib3d240d",
-        "opencv_ml240d",
-        "opencv_highgui240d",
-        "opencv_contrib240d",
+        "opencv_core243d",
+        "opencv_flann243d",
+        "opencv_imgproc243d",
+        "opencv_photo243d",
+        "opencv_video243d",
+        "opencv_features2d243d",
+        "opencv_objdetect243d",
+        "opencv_calib3d243d",
+        "opencv_ml243d",
+        "opencv_highgui243d",
+        "opencv_contrib243d",
     }
 end
 
@@ -116,17 +106,17 @@ do
     targetdir "release"
     links {
         "zlib",
-        "opencv_core240",
-        "opencv_flann240",
-        "opencv_imgproc240",
-        "opencv_photo240",
-        "opencv_video240",
-        "opencv_features2d240",
-        "opencv_objdetect240",
-        "opencv_calib3d240",
-        "opencv_ml240",
-        "opencv_highgui240",
-        "opencv_contrib240",
+        "opencv_core243",
+        "opencv_flann243",
+        "opencv_imgproc243",
+        "opencv_photo243",
+        "opencv_video243",
+        "opencv_features2d243",
+        "opencv_objdetect243",
+        "opencv_calib3d243",
+        "opencv_ml243",
+        "opencv_highgui243",
+        "opencv_contrib243",
     }
 end
 
